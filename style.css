@@ -83,3 +83,69 @@ body {
     width: 100%;
   }
 }
+
+/* Add styling for the carousel items */
+.wrapper {
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Hide scrollbar in some browsers */
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
+.item {
+  flex: 0 0 calc(100% / 3);
+  position: relative;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.item img {
+  width: 100%; /* Adjust image size to fit carousel item */
+  height: 200px; /* Set a fixed height for the images */
+  object-fit: cover; /* Maintain aspect ratio while covering the area */
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the price */
+.price {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  padding: 6px 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 12px; /* Adjust the font size for the price */
+  border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 900px) {
+  .item {
+    flex: 0 0 calc(100% / 2);
+  }
+
+  .item img {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .item {
+    flex: 0 0 100%;
+  }
+
+  .item img {
+    height: 160px;
+  }
+}
